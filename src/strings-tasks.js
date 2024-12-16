@@ -20,10 +20,10 @@
  *   getStringLength(undefined) => 0
  */
 function getStringLength(value) {
-   if (value === null || value === undefined || typeof value !== 'string') {
-       return 0;
-     }
-     return value.length;
+  if (value === null || value === undefined || typeof value !== 'string') {
+    return 0;
+  }
+  return value.length;
 }
 
 /**
@@ -167,8 +167,8 @@ function removeFirstOccurrences(str, value) {
  */
 function removeLastOccurrences(str, value) {
   const lastIndex = str.lastIndexOf(value);
-     if (lastIndex === -1) return str;
-     return str.slice(0, lastIndex) + str.slice(lastIndex + value.length);
+  if (lastIndex === -1) return str;
+  return str.slice(0, lastIndex) + str.slice(lastIndex + value.length);
 }
 
 /**
@@ -301,7 +301,7 @@ function containsSubstring(str, substring) {
  */
 function countVowels(str) {
   const vowels = 'aeiouyAEIOUY';
-     return Array.from(str).filter(char => vowels.includes(char)).length;
+  return Array.from(str).filter((char) => vowels.includes(char)).length;
 }
 
 /**
@@ -556,4 +556,3 @@ module.exports = {
   encodeToRot13,
   getCardId,
 };
-
