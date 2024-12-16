@@ -20,10 +20,10 @@
  *   getStringLength(undefined) => 0
  */
 function getStringLength(value) {
-  if (typeof value !== 'string') {
-    return 0;
-  }
-  return value.length;
+   if (value === null || value === undefined || typeof value !== 'string') {
+       return 0;
+     }
+     return value.length;
 }
 
 /**
@@ -166,7 +166,9 @@ function removeFirstOccurrences(str, value) {
  *   removeLastOccurrences('ABABAB', 'BA') => 'ABAB'.
  */
 function removeLastOccurrences(str, value) {
-  return str.replace(value, '');
+  const lastIndex = str.lastIndexOf(value);
+     if (lastIndex === -1) return str;
+     return str.slice(0, lastIndex) + str.slice(lastIndex + value.length);
 }
 
 /**
@@ -298,8 +300,8 @@ function containsSubstring(str, substring) {
  *   countVowels('XYZ') => 1
  */
 function countVowels(str) {
-  const cleanedStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
-  return cleanedStr === cleanedStr.split('').reverse().join('');
+  const vowels = 'aeiouyAEIOUY';
+     return Array.from(str).filter(char => vowels.includes(char)).length;
 }
 
 /**
