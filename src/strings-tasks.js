@@ -264,14 +264,7 @@ function reverseString(str) {
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
 function orderAlphabetically(str) {
-  for (let i = 0; i < str.length; i += 1) {
-    for (let j = i + 1; j < str.length; j += 1) {
-      if (str[i] > str[j]) {
-        // eslint-disable-next-line no-param-reassign
-        [str[i], str[j]] = [str[j], str[i]];
-      }
-    }
-  }
+  return str.split('').sort().join('');
 }
 
 /**
