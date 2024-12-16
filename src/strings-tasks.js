@@ -1,3 +1,10 @@
+/* *******************************************************************************************
+ *                                                                                           *
+ * Please read the following tutorial before implementing tasks:                              *
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String   *
+ *                                                                                           *
+ ******************************************************************************************* */
+
 /**
  * Returns the length of the given string.
  *
@@ -176,7 +183,7 @@ function removeLastOccurrences(str, value) {
  */
 function sumOfCodes(str) {
   let sum = 0;
-  for (let i = 0; i < str.length; i += i) {
+  for (let i = 0; i < str.length; i += 1) {
     sum += str.charCodeAt(i);
   }
   return sum;
@@ -257,8 +264,8 @@ function reverseString(str) {
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
 function orderAlphabetically(str) {
-  for (let i = 0; i < str.length; i += i) {
-    for (let j = i + 1; j < str.length; j += j) {
+  for (let i = 0; i < str.length; i += 1) {
+    for (let j = i + 1; j < str.length; j += 1) {
       if (str[i] > str[j]) {
         // eslint-disable-next-line no-param-reassign
         [str[i], str[j]] = [str[j], str[i]];
@@ -554,3 +561,4 @@ module.exports = {
   encodeToRot13,
   getCardId,
 };
+
